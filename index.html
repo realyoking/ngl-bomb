@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NGL Sender Premium Executor</title>
+    <title>NGL Sender Premium</title>
     <style>
         :root {
             --glass-bg: rgba(10, 10, 14, 0.88);
@@ -323,7 +323,7 @@
         <svg style="width:14px; height:14px; fill:currentColor;" viewBox="0 0 24 24">
             <path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.47,5.34 14.86,5.08L14.47,2.42C14.43,2.18 14.22,2 13.97,2H9.97C9.72,2 9.51,2.18 9.47,2.42L9.08,5.08C8.47,5.34 7.9,5.66 7.38,6.05L4.89,5.05C4.67,4.96 4.4,5.05 4.28,5.27L2.28,8.73C2.16,8.95 2.21,9.22 2.4,9.37L4.51,11C4.47,11.34 4.5,11.67 4.5,12C4.5,12.33 4.47,12.65 4.51,13L2.4,14.63C2.21,14.78 2.16,15.05 2.28,15.27L4.28,18.73C4.4,18.95 4.67,19.04 4.89,18.95L7.38,17.95C7.9,18.34 8.47,18.66 9.08,18.92L9.47,21.58C9.51,21.82 9.72,22 9.97,22H13.97C14.22,22 14.43,21.82 14.47,21.58L14.86,18.92C15.47,18.66 16.04,18.34 16.56,17.95L19.05,18.95C19.27,19.04 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/>
         </svg>
-        <span>NGL Premium Control Deck</span>
+        <span>NGL Bomber Pro</span>
         <svg class="chevron-icon" style="width:12px; height:12px; fill:currentColor;" viewBox="0 0 24 24">
             <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
         </svg>
@@ -334,7 +334,7 @@
         <div class="panel-header">
             <div class="status-wrapper">
                 <div class="status-dot" id="statusDot"></div>
-                <span id="statusTxt">SYSTEM READY</span>
+                <span id="statusTxt">READY</span>
             </div>
             <div style="font-size: 11px; color: var(--text-muted);" id="charCounter">0 characters</div>
         </div>
@@ -342,28 +342,28 @@
         <div class="stats-dashboard">
             <div class="stat-card">
                 <div class="stat-val" id="statSent">0</div>
-                <div class="stat-lbl">Processed</div>
+                <div class="stat-lbl">Bombed</div>
             </div>
             <div class="stat-card">
                 <div class="stat-val" id="statSuccess">100%</div>
-                <div class="stat-lbl">Success Rate</div>
+                <div class="stat-lbl">Work Rate</div>
             </div>
             <div class="stat-card">
                 <div class="stat-val" id="statTimer">00:00:00</div>
-                <div class="stat-lbl">Elapsed Time</div>
+                <div class="stat-lbl">Time Used</div>
             </div>
         </div>
 
         <div class="config-grid">
             
             <div class="input-box span-2">
-                <label>Target Identity Queue (Press Enter to Add)</label>
+                <label>Userman(Press Enter to Add)</label>
                 <input type="text" id="usernameInput" placeholder="Add multiple users...">
                 <div class="tags-container" id="tagsContainer"></div>
             </div>
 
             <div class="input-box span-2">
-                <label>Messages List / Rotator Payloads (One per line)</label>
+                <label>Messages</label>
                 <textarea id="messageInput" placeholder="Enter messages. System rotates through choices sequentially..." rows="3"></textarea>
             </div>
 
@@ -373,7 +373,7 @@
             </div>
 
             <div class="input-box">
-                <label>Loop Parameters Mode</label>
+                <label>Mode</label>
                 <select id="loopMode">
                     <option value="normal">Normal Mode</option>
                     <option value="infinite">Infinite Loop Mode</option>
@@ -383,7 +383,7 @@
             </div>
 
             <div class="input-box" id="scheduleBox" style="display:none;">
-                <label>Execution Datetime Schedule</label>
+                <label> Datetime Schedule</label>
                 <input type="datetime-local" id="scheduleTime">
             </div>
 
@@ -393,12 +393,12 @@
             </div>
 
             <div class="input-box span-2">
-                <label>Rate Limiting Velocity Engine</label>
+                <label>Speed</label>
                 <div class="mode-container">
                     <div class="mode-btn" data-delay="3000">Slow</div>
                     <div class="mode-btn active" data-delay="1000">Normal</div>
                     <div class="mode-btn" data-delay="400">Fast</div>
-                    <div class="mode-btn" data-delay="50">Insane</div>
+                    <div class="mode-btn" data-delay="50">Ishowspeed</div>
                 </div>
             </div>
 
@@ -407,7 +407,7 @@
         <div class="control-actions">
             <button class="main-action btn-run" id="sendBtn">
                 <svg style="width:14px; height:14px; fill:currentColor;" viewBox="0 0 24 24"><path d="M8,5V19L19,12L8,5Z"/></svg>
-                Execute
+                Start
             </button>
             <button class="main-action btn-pause" id="pauseBtn" disabled>Pause</button>
             <button class="main-action btn-stop" id="stopBtn" disabled>Stop</button>
@@ -425,8 +425,8 @@
         </div>
 
         <div class="input-box">
-            <label>Console Interface Logs Window</label>
-            <div id="log">System initialized. Ready to deploy pipelines.</div>
+            <label>Logs</label>
+            <div id="log">Ready anytime ! 😋</div>
         </div>
 
     </div>
