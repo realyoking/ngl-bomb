@@ -719,7 +719,7 @@
                 // Fix 9: Proxy rotational routing processing array injection logic
                 const proxyString = rawProxies.length > 0 ? ` via Proxy [${rawProxies[iteration % rawProxies.length]}]` : '';
 
-                writeToLog(`[Thread-${iteration+1}] Transmitting payload to @${currentTarget}${proxyString}...`);
+                writeToLog(`[Thread-${iteration+1}] sending message to @${currentTarget}${proxyString}...`);
 
                 try {
                     let response, result;
@@ -741,7 +741,7 @@
                             });
                             
                             if (response.status === 429) {
-                                writeToLog(`⚠️ Rate Limit Hit (429)! Cooling down loop velocity parameters...`);
+                                writeToLog(`⚠️ Rate Limit Hit (429)! Cooling down loop speed`);
                                 await sleep(5000); 
                                 attempt++;
                                 continue;
@@ -764,9 +764,9 @@
                     totalSentCount++;
                     if (success) {
                         successfulSends++;
-                        writeToLog(`✅ Delivered payload successfully to @${currentTarget}.`);
+                        writeToLog(`✅ sent message to @${currentTarget}.`);
                     } else {
-                        writeToLog(`\n❌ Absolute failure dropping packet line to @${currentTarget}.`);
+                        writeToLog(`\n❌ fail to sent message to @${currentTarget}.`);
                     }
                     
                     document.getElementById('statSent').innerText = totalSentCount;
@@ -774,7 +774,7 @@
                     document.getElementById('statSuccess').innerText = `${successRate}%`;
 
                 } catch (err) {
-                    if (isRunning) writeToLog(`❌ Network failure exception: ${err.message}`);
+                    if (isRunning) writeToLog(`❌ network fail ${err.message}`);
                 }
 
                 iteration++;
